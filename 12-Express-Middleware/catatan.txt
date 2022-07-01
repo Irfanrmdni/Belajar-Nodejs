@@ -1,0 +1,57 @@
+Middleware
+- sebuah software yang menghubungkan software atau aplikasi lain
+- sebuah software yang berada diantara sistem operasi dan aplikasi
+
+namun istilah Middleware bisa juga di :
+- database
+- web server
+- web application
+- game engine
+
+express Middleware / Middleware yang ada di dalam express :
+- aplikasi express itu sebenernya berisi serangkaian pemanggilan fungsi Middleware.
+- jadi express menganggap apapun yang di proses setelah user melakukan request dan user sebelum menerima response itu adalah Middleware
+- nah di express itu disebut fungsi Middleware. Middleware dibuat menjadi function
+
+fungsi Middleware :
+- sebuah fungsi yang memiliki akses ke object request (req) object response (res) dan fungsi Middleware berikutnya (next)
+
+didalam express Middleware ada 3 :
+1. user-define Middleware -> Middleware yang kita bikin sendiri. terbagi menjadi 3
+    - application-level Middleware (di level aplikasi).
+    - router-level Middleware (di level router).
+    - error-handling Middleware (di level error handling).
+
+2. built-in Middleware    -> Middleware yang sudah tertanam didalam express. yang berfungsi untuk melakukan sesuatu secara spesifik
+
+3. third-party Middleware -> Middleware yang sudah dibikin oleh orang lain yang kita bisa install lewat npm (bukan sebagai modul. tapi sebagai Middleware) 
+
+fungsi Middleware dapat menjalankan :
+- mengeksekusi code
+- melakukan perubahan pada request dan response object
+- mengakhiri siklus request dan response
+- memanggil fungsi Middleware berikutnya yang ada dalam tumpukan
+
+jika fungsi Middleware yang sedang dijalankan itu tidak mengakhiri siklus request dan response maka. fungsi tersebut harus memanggil fungsi next()
+untuk ngasih tau setelah ini kita masuk ke Middleware yang mana. kalo tidak maka akan nge-hang
+
+menggunakan Middleware di web application :
+alur nya : request -> app -> response
+- jadi client me-request dan app nya mengolah request client. lalu app tersebut akan memberikan response.
+
+maka dari itu kita bisa menambahkan Middleware sebelum app nya memproses request kita.
+request -> authentication -> app -> response
+
+contohnya untuk authentication. dan Middleware ini bisa kita buat lebih dari 1.
+contohnya sebelum masuk ke authentication kita masuk ke Middleware yang namanya routing.
+untuk menentukan request yang kita tentukan ini akan mengarah kemana.  
+request -> routing -> authentication -> app -> response
+
+menggunakan router level Middleware sama saja seperti application level Middleware
+bedanya kalo di application level Middleware dia pake app.use
+sedangkan di router level Middleware dia pake router.use()
+
+secara default express melindungi file-file statis kita (gambar,video,pdf,musik,css,js)
+yang digunakan sebagai assets itu tidak bisa diakses secara default jadi diproteksi oleh express nya.
+supaya kita bisa akses file statis tersebut. kita harus ngasih tau ke express nya kalo kita punya folder public 
+yang isinya file-file statis yang boleh diakses oleh siapapun 

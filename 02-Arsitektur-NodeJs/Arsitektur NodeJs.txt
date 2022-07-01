@@ -1,0 +1,8 @@
+Arsitektur NodeJs
+
+fs.writeFile() 		-> untuk mengakses file system
+os.platform()  		-> untuk mengetahui operating system kita
+http.createServer()	-> untuk membuat web server
+path.dirname()		-> untuk mengetahui alamat dimana kita menyimpan file
+
+cara kerjanya: Asynchronous Non-Blocking Single Thread

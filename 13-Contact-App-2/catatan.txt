@@ -1,0 +1,66 @@
+Latihan project contact app
+
+ketika akan membuat post data atau request dengan method POST.
+kita harus buat dulu app.get() atau request dengan method GET. untuk menampilkan/mengambil data yang akan di tambah
+kemudian membuat request dengan method POST app.post() untuk logic tambah data.
+dan dalam pengambilan request body nya itu kita harus di parsing. jika tidak maka akan undefined
+cara untuk parsing nya yaitu dengan urlencoded app.use(express.urlencoded({extended: true})) 
+
+express-validator adalah dependency untuk melakukan middleware validasi (validasi email, validasi nomor hp dan lain-lain)
+pemanggilan nya : const { body, validationResult } = require('express-validator');
+body             : untuk menangkap apa yang sudah diinput didalam form
+validationResult : untuk menyimpan data validasi nya. lolos atau enggak validasi nya
+
+untuk mengambil req body dari validasi nya. kita harus sama dengan nama name yang ada di input form nya.
+<input type="email" class="form-control" id="email" name="email">
+app.post('/tambahcontact', body('email').isEmail(), (req, res) => {}
+
+kita juga bisa melakukan custom error message untuk validasi :
+const { check } = require('express-validator');
+
+app.post(
+  '/user',
+  check('password')
+    .isLength({ min: 5 })
+    .withMessage('must be at least 5 chars long')
+    .matches(/\d/)
+    .withMessage('must contain a number'),
+  (req, res) => {
+    // Handle the request somehow
+  },
+);
+
+kita juga bisa melakukan Custom validators/sanitizers untuk validasi jika ada nama/data yang sama (duplikat)
+const { body } = require('express-validator');
+
+app.post(
+  '/user',
+  body('password').isLength({ min: 5 }),
+  body('passwordConfirmation').custom((value, { req }) => {
+    if (value !== req.body.password) {
+      throw new Error('Password confirmation does not match password');
+    }
+
+    // Indicates the success of this synchronous custom validator
+    return true;
+  }),
+  (req, res) => {
+    // Handle the request
+  },
+);
+
+dependency untuk membuat pesan alert (ketika data berhasil dibuat / diedit / dihapus)
+const flash = require('connect-flash');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+dalam proses update data kita tidak hanya mengirimkan data dari input yang akan diubah seperti nama nohp email website.
+tetapi kita juga mengirimkan data nama sebagai input hidden (tidak terlihat).
+fungsi nya ketika kita mengubah nama kita bisa mengakses data nama yang lama
+karna patokan di url yang diambil itu adalah nama 
+
+.trim()
+fungsi trim ini berfungsi untuk memotong karakter-karakter spasi pada bagian awal
+dan akhir sehingga fungsi ini sangat cocok untuk diterapkan pada proses input data-data
+
+delete contactUpdate.oldNama; untuk melakukan delete properti yaitu oldNama pada object contactUpdate

@@ -1,0 +1,4 @@
+process.argv = adalah untuk mendapatkan / membaca argument dari cmd
+
+yargs : sebuah module untuk mengelola argument dari cmd
+

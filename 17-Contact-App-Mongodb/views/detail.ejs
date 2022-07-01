@@ -1,0 +1,54 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Detail Contact</h2>
+
+            <% if (!contact) { %>
+            <div class="alert alert-danger fw-bold" role="alert">
+                data contact yang anda cari tidak ditemukan!
+            </div>
+            <% } else { %>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Nomor HP</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Alamat</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-success">
+                        <td><%= contact.nama %> </td>
+                        <td><%= contact.nohp %> </td>
+                        <td><%= contact.email %> </td>
+                        <td><%= contact.alamat %> </td>
+                        <td>
+                            <a href="/contact/update/<%= contact.nama %>" class="btn btn-success badge rounded-pill">
+                                <i class="bi bi-gear"></i>
+                                Update
+                            </a>
+                        </td>
+
+                        <td>
+                            <!--? mencoba menggunakan cara http method DELETE  -->
+                            <form method="POST" action="/contact?_method=DELETE" style=" margin-left: -25px;">
+                                <input type="hidden" name="nama" value="<%= contact.nama %>">
+
+                                <button type="submit" class="btn btn-danger badge rounded-pill">
+                                    <i class=" bi bi-trash"></i>
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <% } %>
+
+            <a href="/contact" class="fw-bold text-decoration-none"><i class="bi bi-arrow-left"></i> kembali ke daftar
+                contact</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+NPM (node package manager)
+tetapi NPM itu bukan hanya Node package manager. 
+NPM digunakan untuk menyimpan projects yang open source
+
+menggunakan NPM untuk inisialisasi projects sebagai npm :
+1. $npm init
+
+cara install dependency atau package :
+1. kita buka npmjs dan kita cari package yang kita akan gunakan
+2. lalu install $npm install nama package
+3. cara install sesuai dengan versi yang kita mau. npm install nama package@versi
+4. untuk menghapus package $npm uninstall <nama package> atau jika package nya global $npm uninstall -g <nama package>

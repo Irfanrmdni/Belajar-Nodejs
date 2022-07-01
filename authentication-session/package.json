@@ -1,0 +1,26 @@
+{
+  "name": "authentication-expressjs",
+  "version": "1.0.0",
+  "description": "latihan auth with expressjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "irfan ramdani",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "connect-redis": "^5.2.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.11.0",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
+    "redis": "^3.1.2"
+  }
+}

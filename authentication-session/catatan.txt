@@ -1,0 +1,8 @@
+req.query
+contohnya ketika kita melakukan request terhadap url yang memiliki parameter dan nilai,
+
+req.params
+berfungsi untuk menangkap nilai yang dikirimkan melalui url yang mengirimkan nilai secara langsung tanpa key
+
+req.body
+berfungsi untuk menangkap nilai yang dikirimkan melalui form-html (interface),

@@ -1,0 +1,30 @@
+Apa itu nodeJs ?
+- javascript runtime yang dibangun atau dibuat didalam javascript engine yang
+  namanya V8 punyanya crhome
+- sebuah runtime untuk membuat aplikasi yang asynchronous
+- runtime adalah dimana kita menjalankan atau mengeksekusi code kita
+
+Karakteristik NodeJs
+- asynchronous dan event driven
+- bisa membuat program non-blocking
+- single threaded (dapat mengerjakan 1 hal 1 proses dalam 1 waktu tertentu tapi highly scalable)
+- cross platform
+- open source - MIT license
+- NPM
+
+fitur utama NodeJs
+- file system (mengakses file system)
+- buffer (mengelola binary dari file nya)
+- http & https
+- repl (buat mengeksekusi program node kita lewat cmd)
+- console
+- crypto
+- zlib
+
+NodeJs cocok untuk 
+- dynamic single page application
+- realtime app (chat, multiplayer)
+- API
+- streaming app
+- microservices
+- command line tool 

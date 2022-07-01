@@ -1,0 +1,19 @@
+{
+  "name": "12-express-middleware",
+  "version": "1.0.0",
+  "description": "belajar middleware",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "irfan ramdani",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
+}

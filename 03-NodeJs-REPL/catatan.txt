@@ -1,0 +1,14 @@
+REPL itu sama seperti console javascript di web browser
+
+- di cmd / git bash
+- ketik perintah 'node'
+- maka kita bisa melakukan apapun seperti di console
+
+perintah :
+ll
+global          : variabel global
+global. + tab   : merupakan modul-modul dari NodeJs
+.help           : special keyword
+.load           : digunakan untuk load file javascript yang kita punya
+.save           : digunakan untuk save file javascript yang kita buat di repl
+.break & .clear : untuk berhenti atau mengundo ketika menulis file javascript

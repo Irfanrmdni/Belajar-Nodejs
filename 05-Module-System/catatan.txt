@@ -1,0 +1,24 @@
+modul adalah sekumpulan code yang dapat digunakan kembali dengan antarmuka yang terdefinisi.
+
+node modules adalah fungsionalitas yang simple ataupun kompleks yang tersimpan didalam sebuah file javascript
+yang dapat digunakan kembali pada aplikasi nodejs.
+
+jadi setiap modul didalam nodejs memiliki konteks nya masing-masing tidak bisa saling tercammpur dengan modul lain 
+pada lingkup global.
+
+jadi untuk cara penggunaan module nodejs
+ketika akan menggunakan file javascript di file javascript lain. maka kita gunakan module.exports
+dan ketika akan menggunakan file javascript itu maka kita gunakan require().
+
+kita bisa menggunakan lebih dari 1 modul.exports di dalam file javascript
+
+3 tipe module nodejs 
+- core modules        : modules yang sudah dimiliki oleh nodejs didalam library nya (kita hanya perlu require() saja karna default nya sudah di exports)
+- local modules       : module yang kita bikin sendiri (contoh nya seperti diatas kita perlu exports dan require())
+- third party modules : module yang dibikin oleh orang lain yang bisa kita pakai. ini disebut npm modules
+
+require()
+fungsi require mencari modul dengan urutan sebagai berikut.
+1. core modules : yang akan dicari pertama kali oleh nodejs
+2. file atau direktori (./ atau ../) : jika tidak ada di core modules maka nodejs akan mencari di file atau direktori
+3. folder 'node_modules' : untuk mencari di dalam folder node_modules untuk third party modules

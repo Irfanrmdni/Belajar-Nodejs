@@ -1,0 +1,15 @@
+Mongoose : merupakan sebuah modul untuk mempermudah aplikasi express kita melakukan koneksi database ke mongodb
+
+dependency method-override : berfungsi agar nodejs bisa melakukan http method seperti (GET, POST, PUT, DELETE dan lain-lain)
+karna default nya nodejs hanya bisa melakukan http method GET dan POST saja
+
+<a style="margin-left: -20px;" href="/contact/delete/<%= contact.nama %>"
+                                class="btn btn-danger badge rounded-pill">
+                                <i class="bi bi-trash"></i>
+                                Delete
+                            </a>
+
+
+
+
+            

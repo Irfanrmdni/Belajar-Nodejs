@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Daftar Contact</h1>
+    <ul class="contacts">
+
+    </ul>
+
+    <script>
+        const contacts = document.querySelector('.contacts');
+        let showContact = '';
+
+        fetch('data/contacts.json')
+            .then((res) => res.json())
+            .then((res) => {
+                res.forEach(data => {
+                    showContact += template(data);
+                    contacts.innerHTML = showContact;
+                });
+            });
+
+        const template = (data) => {
+            return `
+                <li>
+                    <p class="nama">Nama: ${data.nama}</p>
+                    <p class="nohp">No Handphone: ${data.nohp}</p>
+                    <p class="email">Email: ${data.email}</p>
+                </li>`
+        };
+    </script>
+</body>
+
+</html>

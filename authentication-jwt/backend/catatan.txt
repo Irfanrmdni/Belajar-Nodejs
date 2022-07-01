@@ -1,0 +1,19 @@
+Sequelize adalah pustaka ORM Node.js untuk Postgres, MySQL, MariaDB, SQLite, dan Microsoft SQL Server yang memetakan tabel
+dalam database dan hubungannya dengan kelas. Saat menggunakan Sequelize, kita tidak harus menulis kueri SQL,
+tetapi kita harus bekerja dengan data seperti objek biasa.
+
+CORS adalah mekanisme untuk memberi tahu browser, apakah sebuah request yang di-dispatch dari aplikasi web domain lain
+atau origin lain, ke aplikasi web kita itu diperbolehkan atau tidak. Jika aplikasi kita tidak mengijinkan
+maka akan muncul error, dan request pasti digagalkan oleh browser.
+
+app.use(cors({
+    credentials: true,
+    origin: 'http://localhost:3000'
+}));
+
+credentials : untuk client agar harus mengirimkan credentials
+origin      : domain yang kita izinkan untuk dapat mengakses API kita 
+
+dengan menambahkan type 'module di package.json maka kita bisa menggunakan sintaks ES6 untuk export import module
+
+khusus untuk middleware biasanya menggunakan 3 parameter (req,res,next)

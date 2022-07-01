@@ -1,0 +1,66 @@
+Express Js
+Fast, unopinionated, minimalist web framework for Node.js
+
+- Web app framework yang dibuat diatas nodejs
+- menyediakan antarmuka yang minimal untuk kakas yang diperlukan dalam membuat aplikasi Web
+- membantu pengelolaan aliran data dari server ke aplikasi
+- MERN , MEVN , MEAN Stack
+
+maksud dari unopinionated :
+- tidak ada aturan baku untuk membuat sesuatu
+- flexibel
+- menentukan sendiri struktur aplikasi
+- bongkar pasang middleware
+
+fitur utama nya :
+- menangani request dengan berbagai metode HTTP dengan mudah (membuat routing system / routes)
+- MVC (Model View Controller)
+- terintegrasi dengan view rendering engine. untuk mengelola template (contohnya kalo di laravel blade template / jetstream)
+- middleware
+
+template engine Express Js :
+- pug
+- haml.js
+- ejs
+- hbs
+- squirrelly
+- eta
+- react
+- swig
+- whiskers
+- blade
+- express-hbs
+- express-handlerbar
+- express-views-dom
+
+integrasi database :
+- cassandra
+- mysql
+- mongodb
+- oracle
+- postgresql
+- redis
+- sql server
+
+res.send()     -> mengirimkan response dalam bentuk apapun. (contoh text) ke client
+res.sendFile(path, {root: __dirname}) -> mengirimkan isi dari sebuah file (file html / file javascript / gambar / pdf dan lain-lain)
+- path              : alamat url relative path file nya
+- {root: __dirname} : root nya adalah folder project express kita
+
+apa itu (req) dan (res) ?
+res / response :
+- apa yang dikembalikan dari express. ketika kita mentarget path atau alamat url
+req / request  :
+- apa yang dikirimkan ke express nya  
+
+app.use()
+- untuk menjalankan sebuah middleware
+- akan selalu dijalankan untuk request apapun
+- digunakan ketika user me-request halaman yang tidak ada
+- hati-hati pada saat menggunakan res.use() harus sesuai urutan program
+
+app.get()     -> untuk melakukan http req dengan method get 
+app.post()    -> untuk melakukan http req dengan method post 
+app.put()     -> untuk melakukan http req dengan method put 
+app.delete()  -> untuk melakukan http req dengan method delete 
+app.all()     -> untuk melakukan http req dengan method put update delete read 

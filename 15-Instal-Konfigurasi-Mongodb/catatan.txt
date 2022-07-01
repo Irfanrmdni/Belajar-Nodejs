@@ -1,0 +1,18 @@
+perintah :
+show dbs                             -> untuk melihat database yang kita punya
+use coba1                            -> untuk menggunakan database coba1 (jika ada). jika tidak ada maka akan dibuatkan database coba1.
+db.createCollection('mahasiswa')     -> untuk membuat collection atau table database
+db.mahasiswa.insertOne({             -> untuk menambahkan 1 data baru kedalam collection atau table 
+    nama: "irfan ramdani",
+    email: "irfanrmdni@gmail.com"
+})
+db.mahasiswa.insertMany([            -> untuk menambahkan banyak data baru kedalam collection atau table 
+    {
+        nama: "irfan ramdani",
+        email: "irfanrmdni@gmail.com"
+    },
+    {
+        nama: "irfan ramdani",
+        email: "irfanrmdni@gmail.com"
+    }
+])

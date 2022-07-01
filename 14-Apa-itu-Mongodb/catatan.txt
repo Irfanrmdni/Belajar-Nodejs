@@ -1,0 +1,75 @@
+Mongodb
+
+Apa itu Mongodb : 
+- berasal dari kata Humongous Database artinya besar. dapat mengelola data yang sangat banyak dan besar
+- Mongodb adalah sebuah database berbasis dokumen yang memiliki skalabilitas dan fleksibilitas yang kita inginkan
+  dan juga memiliki fitur query dan indexing yang kita butuhkan
+
+Database berbasis dokumen merupakan salahsatu tipe dari noSQL Database. 
+
+noSQL Database
+- artinya not only SQL (dia bisa melakukan apa yang bisa dilakukan oleh SQL Database bahkan lebih)
+- schemaless / flexible schema (database yang tidak memiliki schema namun dapat mengolah data berbeda-beda)
+- denormalization (data nya tidak normal atau tidak terstruktur)
+- non-relational database (jadi bisa aja didalamnya tidak ada relasi antar data/tabel)
+  tidak memakai konsek seperti primary key , foreign key , cardenalitas
+- unstructured , semi-structured, structured-data (kita bisa menyimpan beragam jenis data)
+  bisa data yang tidak terstruktur kita bisa menyimpan data yang semi struktur dan bisa juga data yang terstruktur
+
+apa itu schema :
+- contoh nya ketika kita membuat database di MYSQL. sebelum kita membuat data itu kita harus mendefinisikan dulu
+struktur dari database dan tabel nya atau DDL. kita harus bikin nama tabel nya apa struktur tabel nya seperti apa.
+ada field apa aja, ukuran nya berapa, tipe data nya apa aja, itu namanya schema
+
+tipe noSQL database :
+- key-value store (dimana didalamnya menyimpan antara pasangan key dan value saja)
+  database yang sangat cepat untuk dibaca. biasa digunakan untuk catching ada yang namanya redis sebagai database nya
+- document based (contoh nya tadi Mongodb , Couchdb)
+- column-oriented database (database nya berbasis column. ada yang namanya hbase , cassandra)
+- graph database (contoh nya neo4j)
+
+terminologi pada SQL dan noSQL
+1.SQL
+- nama database : database
+- table
+- column/field
+- row/record
+
+2. noSQL
+- nama database : database
+- collection = table
+- field = column/field
+- document = row/record
+
+konsep embedded document (denormalization) :
+ {
+      title: 'Titanic',
+      year: 1997,
+      genres: [ 'Drama', 'Romance' ],
+      rated: 'PG-13',
+      languages: [ 'English', 'French', 'German', 'Swedish', 'Italian', 'Russian' ],
+      released: ISODate("1997-12-19T00:00:00.000Z")
+   },
+   {
+      title: 'The Dark Knight',
+      year: 2008,
+      genres: [ 'Action', 'Crime', 'Drama' ],
+      rated: 'PG-13',
+      languages: [ 'English', 'Mandarin' ],
+      released: ISODate("2008-07-18T00:00:00.000Z"),
+      awards: {
+         wins: 144,
+         nominations: 106,
+         text: 'Won 2 Oscars. Another 142 wins & 106 nominations.'
+      }
+   },
+}
+
+contohnya kita punya 2 data / document. data ke 1 itu hanya punya 6 field tetapi di data ke 2 itu ada field baru yaitu awards.
+yang berisi object lagi/document. jadi di data ke punya 7 field nah itu kita sebut dengan embedded document (dokumen yang ditambahkan lagi)
+walapun datanya jadi tidak seragam nah itu disebut schemaless
+
+kenapa menggunakan Mongodb :
+- karna format data nya JSON/BSON (jadi kita dapat dengan mudah untuk mengelola data)
+- javascript
+- MERN , MEVN , MEAN

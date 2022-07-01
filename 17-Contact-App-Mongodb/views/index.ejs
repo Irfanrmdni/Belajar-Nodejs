@@ -1,0 +1,23 @@
+<h1>Ini halaman index</h1>
+<!-- ? contoh penggunaan ejs -->
+<% const nama = 'irfan ramdani' %>
+<h5>nama from variabel <%= nama %> </h5>
+
+<!-- ? contoh penggunaan ejs dengan mengambil properti dari app.js -->
+<h5>nama from app <%= name %></h5>
+
+<h1>Daftar Mahasiswa</h1>
+
+<% if (data.length === 0) { %>
+<i style="color: red;">data mahasiswa masih kosong!</i>
+<% } else { %>
+<ul>
+    <% data.map((dataMahasiswa) => { %>
+    <li>
+        <p><%= dataMahasiswa.nama %> </p>
+        <p><%= dataMahasiswa.npm %> </p>
+        <p><%= dataMahasiswa.jurusan %> </p>
+    </li>
+    <% }) %>
+</ul>
+<% } %>

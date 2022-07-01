@@ -1,0 +1,50 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="text-capitalize">Form update data contact</h1>
+
+            <form class="mt-3" method="post" action="/tambahcontact/update">
+                <% if (typeof errors != 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <% errors.forEach(err => { %>
+                        <li><%= err.msg %> </li>
+                        <% }) %>
+                    </ul>
+                </div>
+                <% } %>
+
+                <!-- ? supaya ketika nama diedit maka kita bisa mengakses nama yang lama -->
+                <input type="hidden" name="oldNama"
+                    value="<%=(contact.oldNama)?contact.oldNama.trim() : contact.nama.trim()%>">
+                <!-- ? value nya melakukan pengecekan. didalam object contact ada gak oldNama ? jika ada / true maka
+                    ? maka yang dikirimkan / menjadi value nya contact oldNama. jika tidak / false maka contact nama
+                ? -->
+
+                <div class="mb-3">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" placeholder="example:  irfan ramdani"
+                        value="<%= contact.nama %>" required />
+                </div>
+                <div class="mb-3">
+                    <label for="nohp" class="form-label">Nomor HP</label>
+                    <input type="text" class="form-control" id="nohp" name="nohp" placeholder="example:  089677451818"
+                        value="<%= contact.nohp %>" required />
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                        placeholder="example:  irfanrmdni@gmail.com" value="<%= contact.email %>" required />
+                </div>
+                <div class="mb-3">
+                    <label for="website" class="form-label">Website</label>
+                    <input type="text" class="form-control" id="website" name="website"
+                        placeholder="example:  irfanramdani.com" value="<%= contact.website %>" required />
+                </div>
+
+                <a href="/contact" class="btn btn-secondary" style="margin-right: 10px;">Cancel</a>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>

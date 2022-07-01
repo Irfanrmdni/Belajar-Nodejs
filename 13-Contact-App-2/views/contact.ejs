@@ -1,0 +1,66 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Daftar Contact</h2>
+            <a href="/contact/tambah" class="btn btn-success my-4">
+                <i class="bi bi-plus-square"></i>
+                Tambah data contact
+            </a>
+
+            <% if (messageAddContact.length > 0) { %>
+            <div class="alert alert-success fw-bold" role="alert">
+                <i class="bi bi-check-lg"></i> <%= messageAddContact %>
+            </div>
+            <% } %>
+
+            <% if (messageUpdateContact.length > 0) { %>
+            <div class="alert alert-success fw-bold" role="alert">
+                <i class="bi bi-check-lg"></i> <%= messageUpdateContact %>
+            </div>
+            <% } %>
+
+            <% if (messageDeleteContact.length > 0) { %>
+            <div class="alert alert-success fw-bold" role="alert">
+                <i class="bi bi-check-lg"></i> <%= messageDeleteContact %>
+            </div>
+            <% } %>
+
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Nomor HP</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (contacts.length === 0) { %>
+                    <tr>
+                        <td colspan="4">
+                            <div class="alert alert-danger" role="alert">
+                                <i class="text-danger fw-bold">Data Contact masih kosong!...</i>
+                            </div>
+                        </td>
+                    </tr>
+                    <% } %>
+
+                    <% contacts.map((contact,index) => { %>
+                    <tr>
+                        <th scope="row"><%= index + 1 %> </th>
+                        <td><%= contact.nama %></td>
+                        <td><%= contact.nohp %></td>
+                        <td>
+                            <a href="/contact/<%= contact.nama %>" class="btn btn-primary badge rounded-pill">
+                                <i class="bi bi-info-circle"></i>
+                                Detail
+                            </a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

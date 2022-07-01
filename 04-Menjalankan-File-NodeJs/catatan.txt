@@ -1,0 +1,25 @@
+menjalankan node
+
+perintah: node <nama file javascript>
+
+khusus file dengan nama index.js itu bisa menjadi file root atau file utama dari aplikasi kita
+sehingga pada saat menjalankan node tidak perlu menuliskan node index cukup tulis node .
+maka secara otomatis dia akan mencari file index
+
+ketika menjalankan object global seperti window. maka ketika menjalankan di node akan error
+karna window merupakan bagian dari browser dan node konteks nya sudah di luar browser
+berbeda dengan ketika kita menjalankan nya di browser maka itu tidak masalah
+
+=========================================================================================================================
+ketika kita mempunyai function di file javascript maka kita juga bisa menjalankan function itu di file javascript berbeda
+jadi kita punya 2 file javascript. yang satu untuk membuat function yang satunya lagi untuk menjalankan function nya
+dengan catatan file javascript nya di 1 file html
+
+namun di dalam node itu akan error karna nodejs menganut sesuatu yang disebut dengan system module. 
+jadi dia menganggap 1 file itu sebagai 1 modul sendiri apa yang ada di modul yang 1 itu tidak bisa diakses
+oleh modul yang lain. meskipun kita pakai require()
+
+cara mengatasi nya yaitu kita gunakan keyword module.exports agar kita bisa menjalankan function di file javascript manapun
+=========================================================================================================================
+
+require() adalah untuk memanggil file lain diluar file 

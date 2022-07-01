@@ -1,0 +1,42 @@
+Express view engine
+
+view engine / template engine : 
+- memungkinkan kita membuat file template statis untuk aplikasi kita
+- didalam engine tersebut mengganti variabel pada template kita dengan nilai sebenarnya lalu menampilkan nya dalam bentuk HTML
+- mempermudah pembuatan halaman HTML
+- cara agar lebih mudah mengelola tampilan dari website
+
+template engine Express Js :
+- pug
+- haml.js
+- ejs
+- hbs
+- squirrelly
+- eta
+- react
+- swig
+- whiskers
+- blade
+- express-hbs
+- express-handlerbar
+- express-views-dom
+
+yang akan digunakan yaitu ejs :
+- karna simple syntak
+- simple setup
+- speedy execution
+- easy debugging
+- active development
+- awalnya dibuat oleh pembuat Express
+
+dalam menggunakan view engine ejs atau apapun maka kita harus ubah format file nya menjadi .ejs
+
+app.set(name,value) : 
+- Menetapkan pengaturan name ke value. Anda dapat menyimpan nilai apa pun yang Anda inginkan
+- tetapi nama tertentu dapat digunakan untuk mengonfigurasi perilaku server.
+
+res.render(view,locals,callback) :
+- Merender a viewdan mengirimkan string HTML yang dirender ke klien.
+- locals, objek yang propertinya menentukan variabel lokal untuk tampilan.
+- callback, fungsi panggilan balik. Jika disediakan, metode ini mengembalikan kemungkinan kesalahan dan string yang dirender
+  tetapi tidak melakukan respons otomatis. Ketika kesalahan terjadi, metode memanggil next(err)secara internal.
